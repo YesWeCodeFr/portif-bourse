@@ -1,0 +1,24 @@
+# Table order is the build order. IDs are permanent.
+
+[[epic]]
+id = 1
+slug = "epic-portefeuille-transactions"
+title = "Gestion du portefeuille et des transactions"
+description = "Un utilisateur initialise son portefeuille, gère ses liquidités et enregistre des achats historisés avec leur devise d'origine et leur normalisation dans la devise par défaut."
+covers = ["R1", "R6", "R13", "R14", "R15"]
+
+[[epic]]
+id = 2
+slug = "epic-instruments-cours-devises"
+title = "Instruments, cours et devises"
+description = "L'application identifie les instruments des places retenues, récupère et persiste leurs cours ainsi que les taux EUR/USD nécessaires aux transactions et aux valorisations."
+covers = ["R2", "R7", "R8", "R9", "R12"]
+after = [{ epic = 1, needs = "le modèle de transaction, d'instrument et de devise par défaut" }]
+
+[[epic]]
+id = 3
+slug = "epic-valorisation-portefeuille"
+title = "Valorisation et consultation du portefeuille"
+description = "L'utilisateur consulte une composition valorisée dans la devise par défaut, avec poids, performance latente, évolution et signalement de fraîcheur des cours."
+covers = ["R3", "R4", "R10", "R11", "R16"]
+after = [{ epic = 2, needs = "les cours, historiques et taux de change persistés" }]

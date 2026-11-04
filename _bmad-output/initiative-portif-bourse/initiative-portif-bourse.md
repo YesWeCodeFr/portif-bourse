@@ -77,3 +77,4 @@ Un investisseur peut constater l’état et la performance latente de son portef
 - Decision: 2026-11-04 — Les transactions sont normalisées dans la devise par défaut pour les calculs ; le montant et la devise d’origine restent conservés.
 - Decision: 2026-11-04 — La valorisation courante des positions en devise étrangère utilise le dernier taux de change connu vers la devise par défaut.
 - Decision: 2026-11-04 — Les ventes sont hors périmètre de la V1 et seront réexaminées dans une version future.
+- Decision: 2026-11-04 — Aucun epic de socle technique séparé n'est créé à ce stade ; le premier epic porte la mise en place minimale nécessaire à un parcours vertical fonctionnel.
