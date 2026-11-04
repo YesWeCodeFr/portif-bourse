@@ -1,0 +1,67 @@
+# Table order is the build order. IDs are permanent.
+
+[[entry]]
+id = 1
+type = "story"
+title = "Initialiser un portefeuille"
+description = "Un utilisateur crée l'état initial d'un portefeuille vide, choisit sa devise par défaut et voit zéro liquidité."
+verify = "Au premier démarrage, l'utilisateur choisit EUR ou USD et voit un portefeuille vide avec des liquidités à zéro."
+covers = ["R2"]
+after = []
+hitl = true
+risk = "high"
+
+[[entry]]
+id = 2
+type = "story"
+title = "Saisir un apport initial de liquidité"
+description = "Un utilisateur saisit facultativement un apport initial dans la devise du portefeuille, avec une date facultative qui prend la date de saisie par défaut."
+verify = "Après un apport sans date, le solde de liquidités correspond au montant saisi et l'historique affiche la date de saisie."
+covers = ["R2", "R3"]
+after = [1]
+hitl = false
+risk = "high"
+
+[[entry]]
+id = 3
+type = "story"
+title = "Enregistrer un premier achat"
+description = "Un utilisateur enregistre un achat daté avec un instrument sélectionné, une quantité et un prix, puis retrouve la position et le solde de liquidités mis à jour."
+verify = "Après un achat valide, la quantité détenue, le prix moyen, la transaction et le débit des liquidités sont visibles."
+covers = ["R1", "R4"]
+after = [2]
+hitl = false
+risk = "high"
+
+[[entry]]
+id = 4
+type = "story"
+title = "Normaliser une transaction dans la devise par défaut"
+description = "Le registre conserve le montant et la devise d'origine d'une transaction et enregistre son montant normalisé à partir d'un taux fourni pour sa date."
+verify = "Pour un achat en USD dans un portefeuille en EUR, le montant d'origine, le taux fourni et le montant converti en EUR sont tous consultables."
+covers = ["R4", "R5"]
+after = [3]
+hitl = false
+risk = "high"
+
+[[entry]]
+id = 5
+type = "story"
+title = "Consulter l'historique des transactions"
+description = "Un utilisateur consulte la liste des apports et achats enregistrés avec leurs informations, dates, montants d'origine et montants normalisés."
+verify = "La liste affiche au moins l'apport initial et l'achat du tracer bullet avec leurs informations enregistrées."
+covers = ["R3"]
+after = [4]
+hitl = false
+risk = "medium"
+
+[[entry]]
+id = 6
+type = "story"
+title = "Effectuer une passe de consolidation"
+description = "Les calculs, validations et parcours de l'Epic 1 sont consolidés après les stories métier afin de préparer l'intégration avec les epics suivants."
+verify = "Les tests de l'Epic 1 passent et un parcours complet initialisation, apport, achat, conversion et historique est vérifié."
+covers = []
+after = [2, 3, 4, 5]
+hitl = false
+risk = "medium"
