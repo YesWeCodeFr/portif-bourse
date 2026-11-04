@@ -6,7 +6,7 @@ title: "Instruments, cours et devises"
 parent: "initiative-portif-bourse"
 covers: ["R2", "R7", "R8", "R9", "R12"]
 sources: [_bmad-output/initiative-portif-bourse/initiative-portif-bourse.md]
-companions: []
+companions: [_bmad-output/initiative-portif-bourse/architecture-portif-bourse/architecture-portif-bourse.md]
 after: [epic-portefeuille-transactions]
 assignee: ""
 refined: false
@@ -41,8 +41,10 @@ Un instrument et un taux de change peuvent être identifiés, récupérés, hist
 ## References
 
 - parent — _bmad-output/initiative-portif-bourse/initiative-portif-bourse.md, Requirements R2, R7, R8, R9, R12
+- architecture — _bmad-output/initiative-portif-bourse/architecture-portif-bourse/architecture-portif-bourse.md
 
 ## Notes
 
 - Decision: 2026-11-04 — Le premier travail à risque est un spike de couverture et de persistance pour la recherche de ticker, les cours et EUR/USD.
+- Decision: 2026-11-04 — Les instruments, cours et taux persistés portent leurs métadonnées canoniques, leur date de marché, leur source et leur date de récupération afin d'alimenter les calculs dérivés et la fraîcheur de la valorisation.
 - Open question: Choisir les fournisseurs, les règles de taux manquant, la politique de rafraîchissement et la correction des cotations révisées.

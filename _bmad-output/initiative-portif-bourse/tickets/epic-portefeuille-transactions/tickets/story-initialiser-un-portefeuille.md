@@ -21,7 +21,7 @@ Une personne lance l'application et vérifie le parcours initial ; l'utilisateur
 1. **Créer l'état initial vide** (R2)
    **Given** aucune configuration de portefeuille n'existe
    **When** l'application est lancée pour la première fois
-   **Then** un portefeuille est créé avec zéro position et zéro liquidité
+      **Then** un portefeuille est créé avec zéro position et zéro liquidité dérivée du registre vide
 
 2. **Choisir la devise par défaut** (R2)
    **Given** l'écran d'initialisation est affiché
@@ -33,7 +33,8 @@ Une personne lance l'application et vérifie le parcours initial ; l'utilisateur
    **Given** une devise par défaut est choisie
    **When** l'utilisateur ne saisit aucun montant initial et termine l'initialisation
    **Then** l'initialisation est acceptée
-   **And** les liquidités restent à zéro
+      **And** aucune transaction d'apport n'est créée
+      **And** les liquidités dérivées restent à zéro
 
 4. **Refuser une initialisation sans devise** (R2)
    **Given** l'écran d'initialisation est affiché
@@ -45,7 +46,7 @@ Une personne lance l'application et vérifie le parcours initial ; l'utilisateur
    **Given** l'initialisation a été validée
    **When** l'application est relancée
    **Then** le portefeuille conserve la devise par défaut choisie
-   **And** il affiche toujours zéro position et zéro liquidité
+      **And** il affiche toujours zéro position et zéro liquidité dérivée
 
 ## Boundaries
 
@@ -56,8 +57,10 @@ Une personne lance l'application et vérifie le parcours initial ; l'utilisateur
 ## References
 
 - parent — _bmad-output/initiative-portif-bourse/tickets/epic-portefeuille-transactions/epic-portefeuille-transactions.md
+- architecture — _bmad-output/initiative-portif-bourse/architecture-portif-bourse/architecture-portif-bourse.md
 
 ## Notes
 
 - Assumption: Le choix de devise initial est limité à EUR et USD, conformément au périmètre V1.
 - High-risk check: Une personne vérifie manuellement le parcours de premier lancement et la relance de l'application avant de considérer la story terminée.
+- Decision: 2026-11-04 — L'état initial ne crée aucun mouvement ; le zéro de liquidité et de position est dérivé de l'absence de transactions.
