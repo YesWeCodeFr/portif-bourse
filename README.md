@@ -15,8 +15,6 @@ Au fil des épisodes, je partagerai les étapes du projet, du cadrage du besoin 
 La série est disponible dans la playlist :
 👉 https://www.youtube.com/playlist?list=PLbA2CdZ1kquU
 
-# portif-bourse
-
 ## Installation et configuration de la méthode BMAD
 
 Pour installer et configurer la méthode BMAD dans ce projet, exécuter les commandes suivantes à la racine du dépôt :
@@ -25,4 +23,3 @@ Pour installer et configurer la méthode BMAD dans ce projet, exécuter les comm
 npx bmad-method install
 npx skills add bmad-code-org/BMAD-METHOD --skill '*'
 ```
-
